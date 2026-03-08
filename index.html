@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>♡</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Italiana&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --rose: #d4728f;
+        --deep-rose: #a8516e;
+        --cream: #fff5f0;
+        --gold: #d4a574;
+        --burgundy: #6b2d3e;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Cormorant Garamond", serif;
+        background: linear-gradient(
+          135deg,
+          var(--cream) 0%,
+          #ffe8e0 50%,
+          #ffd5d0 100%
+        );
+        color: var(--burgundy);
+        overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          radial-gradient(
+            circle at 20% 30%,
+            rgba(212, 114, 143, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(212, 165, 116, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(168, 81, 110, 0.05) 0%,
+            transparent 70%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .petals {
+        position: fixed;
+        top: -10%;
+        left: 0;
+        width: 100%;
+        height: 120%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .petal {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: var(--rose);
+        opacity: 0.4;
+        border-radius: 50% 0 50% 0;
+        animation: fall linear infinite;
+      }
+
+      .petal:nth-child(1) {
+        left: 10%;
+        animation-duration: 12s;
+        animation-delay: 0s;
+      }
+      .petal:nth-child(2) {
+        left: 25%;
+        animation-duration: 15s;
+        animation-delay: 2s;
+      }
+      .petal:nth-child(3) {
+        left: 40%;
+        animation-duration: 18s;
+        animation-delay: 4s;
+      }
+      .petal:nth-child(4) {
+        left: 55%;
+        animation-duration: 14s;
+        animation-delay: 1s;
+      }
+      .petal:nth-child(5) {
+        left: 70%;
+        animation-duration: 16s;
+        animation-delay: 3s;
+      }
+      .petal:nth-child(6) {
+        left: 85%;
+        animation-duration: 13s;
+        animation-delay: 5s;
+      }
+
+      @keyframes fall {
+        0% {
+          top: -10%;
+          transform: translateX(0) rotate(0deg);
+        }
+        100% {
+          top: 110%;
+          transform: translateX(100px) rotate(360deg);
+        }
+      }
+
+      .password-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--cream) 0%,
+          #ffe8e0 50%,
+          #ffd5d0 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+
+      .password-screen.hidden {
+        display: none;
+      }
+
+      .password-box {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 60px 50px;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(212, 114, 143, 0.2);
+        border: 1px solid rgba(212, 114, 143, 0.3);
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+      }
+
+      .password-box h2 {
+        font-family: "Italiana", serif;
+        font-size: 2.5rem;
+        color: var(--deep-rose);
+        margin-bottom: 30px;
+        letter-spacing: 3px;
+      }
+
+      .password-box input {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        font-family: "Cormorant Garamond", serif;
+        border: 2px solid var(--rose);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        color: var(--burgundy);
+        text-align: center;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .password-box input:focus {
+        outline: none;
+        border-color: var(--deep-rose);
+        box-shadow: 0 0 15px rgba(212, 114, 143, 0.3);
+      }
+
+      .password-box button {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        font-family: "Italiana", serif;
+        background: var(--rose);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .password-box button:hover {
+        background: var(--deep-rose);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(168, 81, 110, 0.3);
+      }
+
+      .error-message {
+        color: var(--deep-rose);
+        font-size: 1rem;
+        margin-top: 15px;
+        font-style: italic;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .error-message.show {
+        opacity: 1;
+      }
+
+      .content {
+        display: none;
+      }
+
+      .content.visible {
+        display: block;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 40px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 80px;
+        animation: fadeInDown 1.2s ease-out;
+      }
+
+      h1 {
+        font-family: "Italiana", serif;
+        font-size: 5rem;
+        font-weight: 400;
+        color: var(--deep-rose);
+        letter-spacing: 8px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(212, 114, 143, 0.2);
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        font-style: italic;
+        color: var(--burgundy);
+        opacity: 0.8;
+        letter-spacing: 3px;
+      }
+
+      .heart-divider {
+        width: 60px;
+        height: 60px;
+        margin: 40px auto;
+        position: relative;
+        animation: heartbeat 1.5s ease-in-out infinite;
+      }
+
+      .heart-divider::before,
+      .heart-divider::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 30px;
+        height: 48px;
+        background: var(--rose);
+        border-radius: 30px 30px 0 0;
+      }
+
+      .heart-divider::before {
+        left: 15px;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+
+      .heart-divider::after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1);
+        }
+      }
+
+      .poem-section {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 60px;
+        margin: 60px 0;
+        box-shadow: 0 8px 32px rgba(212, 114, 143, 0.15);
+        border: 1px solid rgba(212, 114, 143, 0.2);
+        animation: fadeInUp 1.5s ease-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .poem-section::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 120px;
+        color: var(--rose);
+        opacity: 0.15;
+        font-family: "Italiana", serif;
+      }
+
+      .poem-title {
+        font-family: "Italiana", serif;
+        font-size: 2.5rem;
+        color: var(--deep-rose);
+        text-align: center;
+        margin-bottom: 40px;
+        letter-spacing: 4px;
+      }
+
+      .poem {
+        font-size: 1.4rem;
+        line-height: 2.2;
+        color: var(--burgundy);
+        text-align: center;
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+      }
+
+      .poem p {
+        margin-bottom: 30px;
+      }
+
+      .poem .line {
+        display: block;
+        animation: fadeIn 0.8s ease-out backwards;
+      }
+
+      .poem .line:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .poem .line:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .poem .line:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .poem .line:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      .poem .line:nth-child(5) {
+        animation-delay: 1s;
+      }
+      .poem .line:nth-child(6) {
+        animation-delay: 1.2s;
+      }
+      .poem .line:nth-child(7) {
+        animation-delay: 1.4s;
+      }
+      .poem .line:nth-child(8) {
+        animation-delay: 1.6s;
+      }
+      .poem .line:nth-child(9) {
+        animation-delay: 1.8s;
+      }
+      .poem .line:nth-child(10) {
+        animation-delay: 2s;
+      }
+      .poem .line:nth-child(11) {
+        animation-delay: 2.2s;
+      }
+      .poem .line:nth-child(12) {
+        animation-delay: 2.4s;
+      }
+      .poem .line:nth-child(13) {
+        animation-delay: 2.6s;
+      }
+      .poem .line:nth-child(14) {
+        animation-delay: 2.8s;
+      }
+      .poem .line:nth-child(15) {
+        animation-delay: 3s;
+      }
+      .poem .line:nth-child(16) {
+        animation-delay: 3.2s;
+      }
+
+      .signature {
+        text-align: right;
+        font-size: 1.8rem;
+        margin-top: 40px;
+        color: var(--deep-rose);
+        font-family: "Italiana", serif;
+      }
+
+      footer {
+        text-align: center;
+        padding: 60px 0 40px;
+        font-size: 1.2rem;
+        color: var(--burgundy);
+        opacity: 0.7;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 3rem;
+          letter-spacing: 4px;
+        }
+
+        .poem-section {
+          padding: 40px 30px;
+        }
+
+        .poem {
+          font-size: 1.2rem;
+        }
+
+        .poem-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="password-screen" id="passwordScreen">
+      <div class="password-box">
+        <h2>Enter Password</h2>
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="Password"
+          autocomplete="off"
+        />
+        <button onclick="checkPassword()">Enter</button>
+        <p class="error-message" id="errorMessage">
+          Incorrect password. Try again.
+        </p>
+      </div>
+    </div>
+
+    <div class="content" id="content">
+      <div class="petals">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+      </div>
+
+      <div class="container">
+        <header>
+          <h1 id="nameHeader"></h1>
+          <p class="subtitle">A Valentine's Devotion</p>
+        </header>
+
+        <div class="heart-divider"></div>
+
+        <section class="poem-section">
+          <h2 class="poem-title">For <span id="poemName"></span>, My Love</h2>
+          <div class="poem">
+            <p>
+              <span class="line"
+                >In the quiet dawn, your name is my first whisper,</span
+              >
+              <span class="line"
+                ><span id="poemName2"></span>, like honey upon my lips, sweet
+                and tender.</span
+              >
+              <span class="line"
+                >You are the gentle bloom in my garden of dreams,</span
+              >
+              <span class="line"
+                >The soft light that dances through morning's seams.</span
+              >
+            </p>
+            <p>
+              <span class="line"
+                >Your laughter is the melody I carry in my soul,</span
+              >
+              <span class="line"
+                >A symphony that makes my broken pieces whole.</span
+              >
+              <span class="line"
+                >Each moment beside you feels like coming home,</span
+              >
+              <span class="line"
+                >With you, my darling <span id="poemName3"></span>, I'll never
+                be alone.</span
+              >
+            </p>
+            <p>
+              <span class="line"
+                >You are the rose that blooms eternal in my heart,</span
+              >
+              <span class="line"
+                >The masterpiece of love, painted stroke by delicate art.</span
+              >
+              <span class="line"
+                >Through every season, every breath, every beat,</span
+              >
+              <span class="line"
+                >My soul finds its rhythm when our eyes meet.</span
+              >
+            </p>
+            <p>
+              <span class="line"
+                >So here I lay my heart before you, soft and true,</span
+              >
+              <span class="line"
+                >On this day of love, know that I cherish you.</span
+              >
+              <span class="line"
+                ><span id="poemName4"></span>, my forever, my endless
+                Valentine,</span
+              >
+              <span class="line"
+                >In this life and beyond, I'm forever yours, you're forever
+                mine.</span
+              >
+            </p>
+          </div>
+          <div class="signature">— Forever & Always</div>
+        </section>
+
+        <div class="heart-divider"></div>
+
+        <footer>Happy Valentine's Day, <span id="footerName"></span> ♡</footer>
+      </div>
+    </div>
+
+    <script>
+      const correctPassword = atob("bWFqZHhtaW1p");
+      const secretName = String.fromCharCode(77, 105, 109, 105);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("nameHeader").textContent = secretName;
+        document.getElementById("poemName").textContent = secretName;
+        document.getElementById("poemName2").textContent = secretName;
+        document.getElementById("poemName3").textContent = secretName;
+        document.getElementById("poemName4").textContent = secretName;
+        document.getElementById("footerName").textContent = secretName;
+      });
+
+      document
+        .getElementById("passwordInput")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            checkPassword();
+          }
+        });
+
+      function checkPassword() {
+        const input = document.getElementById("passwordInput").value;
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (input === correctPassword) {
+          document.getElementById("passwordScreen").classList.add("hidden");
+          document.getElementById("content").classList.add("visible");
+        } else {
+          errorMessage.classList.add("show");
+          document.getElementById("passwordInput").value = "";
+          setTimeout(() => {
+            errorMessage.classList.remove("show");
+          }, 3000);
+        }
+      }
+    </script>
+  </body>
+</html>
