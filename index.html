@@ -454,6 +454,18 @@
         }
       }
 
+      .poem-photo {
+        display: block;
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 50%;
+        margin: 0 auto 40px;
+        border: 4px solid var(--rose);
+        box-shadow: 0 8px 32px rgba(212, 114, 143, 0.35);
+      }
+
       @media (max-width: 768px) {
         h1 {
           font-size: 3rem;
@@ -579,6 +591,7 @@
         <div class="heart-divider"></div>
 
         <section class="poem-section">
+          <img src="monika.png" alt="Monika" class="poem-photo" />
           <h2 class="poem-title">How to outshine the sky</h2>
           <p class="poem-subtitle" style="text-align:center; font-style:italic; opacity:0.65; margin-bottom:36px; font-size:1.1rem; letter-spacing:2px;">(A Monika problem)</p>
           <div class="poem">
