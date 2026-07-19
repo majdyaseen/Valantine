@@ -454,7 +454,54 @@
         }
       }
 
+      .poem-photo {
+        display: block;
+        width: 100%;
+        max-height: 600px;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 14px;
+        margin: 0 auto 50px;
+        box-shadow: 0 12px 48px rgba(212, 114, 143, 0.35);
+      }
+
+      .side-by-side {
+        display: flex;
+        gap: 24px;
+        margin: 60px 0 30px;
+      }
+
+      .side-card {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px 30px;
+        box-shadow: 0 8px 32px rgba(212, 114, 143, 0.15);
+        border: 1px solid rgba(212, 114, 143, 0.2);
+        text-align: center;
+        font-size: 1.3rem;
+        font-style: italic;
+        line-height: 1.8;
+        color: var(--burgundy);
+        animation: fadeInUp 1.5s ease-out;
+      }
+
+      .payback {
+        text-align: center;
+        font-family: "Italiana", serif;
+        font-size: 2.2rem;
+        color: var(--deep-rose);
+        letter-spacing: 3px;
+        margin: 20px 0 60px;
+        animation: fadeInUp 1.8s ease-out;
+      }
+
       @media (max-width: 768px) {
+        .side-by-side {
+          flex-direction: column;
+        }
+      }
         h1 {
           font-size: 3rem;
           letter-spacing: 4px;
@@ -577,6 +624,107 @@
         </section>
 
         <div class="heart-divider"></div>
+
+        <section class="poem-section">
+          <img src="monika.png" alt="Monika" class="poem-photo" />
+          <h2 class="poem-title">How to outshine the sky</h2>
+          <p class="poem-subtitle" style="text-align:center; font-style:italic; opacity:0.65; margin-bottom:36px; font-size:1.1rem; letter-spacing:2px;">(A Monika problem)</p>
+          <div class="poem">
+            <p>
+              <span class="line">You walked in like you owned the sun,</span>
+              <span class="line">tucked it casually behind your ear.</span>
+              <span class="line">Now the sky's been trying to copy you</span>
+              <span class="line">but it's just not pulling it off this year.</span>
+            </p>
+            <p>
+              <span class="line">You laugh like you planned it</span>
+              <span class="line">like you knew I'd trip over the sound,</span>
+              <span class="line">like you set tiny traps in your smile</span>
+              <span class="line">just to watch my cool hit the ground.</span>
+            </p>
+            <p>
+              <span class="line">I swear the moon checks your schedule</span>
+              <span class="line">before deciding when to glow,</span>
+              <span class="line">and the stars get a little competitive</span>
+              <span class="line">every time you say hello.</span>
+            </p>
+            <p>
+              <span class="line">If beauty were loud it'd be chaos,</span>
+              <span class="line">sirens and fireworks above</span>
+              <span class="line">but you're quieter than all of that,</span>
+              <span class="line">dangerous in the softest kind of love.</span>
+            </p>
+            <p>
+              <span class="line">You make ordinary moments nervous.</span>
+              <span class="line">Even time forgets what it was meant to do.</span>
+              <span class="line">And if I ever look distracted,</span>
+              <span class="line">I promise it's just because it's you.</span>
+            </p>
+          </div>
+          <div class="signature">— Forever & Always</div>
+        </section>
+
+        <div class="heart-divider"></div>
+
+        <section class="poem-section">
+          <h2 class="poem-title">My many redeeming qualities.</h2>
+          <div class="poem">
+            <p>
+              <span class="line">I'm sorry for existing, sometimes I feel like I'm too much—</span>
+              <span class="line">and I wouldn't be surprised if you also felt as such.</span>
+              <span class="line">I have many redeeming qualities! Atleast that's what I think.</span>
+            </p>
+            <p>
+              <span class="line">Like my heart still floats even though many people taught it how to sink,</span>
+              <span class="line">many redeeming qualities, like I'm a pleasure to have in class,</span>
+              <span class="line">like if you were to test my love I think that I would definitely pass.</span>
+            </p>
+            <p>
+              <span class="line">There's a couple things I tend to keep closer to my chest—</span>
+              <span class="line">like the bullying I endured as a child still sometimes gets the best of me.</span>
+              <span class="line">Many qualities to abandon, insecurities and if you need reasons to leave trust me I can find plenty.</span>
+            </p>
+            <p>
+              <span class="line">I won't be who you wished for, but I think I can be better.</span>
+              <span class="line">I won't be this perfect person but I write a damn good love letter—</span>
+              <span class="line">Many redeeming qualities.</span>
+            </p>
+            <p>
+              <span class="line">I'll rhyme about your name, immortalise you on pieces of paper because you deserve the fame.</span>
+              <span class="line">I'm sorry if that's too much, I tend to love in exclamation!</span>
+              <span class="line">I'll step back reel it back in it's only just a "quotation"</span>
+            </p>
+            <p>
+              <span class="line">I have many redeeming qualities I'm overflowing with wonderful traits,</span>
+              <span class="line">I have so many different hobbies, I'm balancing too many plates—</span>
+              <span class="line">so of course they start to fall!</span>
+              <span class="line">I'm sorry for the noise they make as they shatter.</span>
+            </p>
+            <p>
+              <span class="line">I have many redeeming qualities to abandon because I still don't feel like I matter.</span>
+              <span class="line">I'm sorry this is who you've met, I've been trying my absolute best!</span>
+              <span class="line">Sometimes I feel like I'm the words that nobody will ever hear expressed.</span>
+            </p>
+            <p>
+              <span class="line">I have many redeeming qualities like my god I love to write,</span>
+              <span class="line">and I guess that if I was you.. for me I would most definitely fight.</span>
+            </p>
+          </div>
+          <div class="signature">— Monika</div>
+        </section>
+
+        <div class="heart-divider"></div>
+
+        <div class="side-by-side">
+          <div class="side-card">
+            Was it casual when I researched Orchids and The Supernatural for you?
+          </div>
+          <div class="side-card">
+            Was it casual when you learned Base-64 and Encoding for me?
+          </div>
+        </div>
+
+        <p class="payback">This is pay back byaatch ♡</p>
 
         <footer>Happy Valentine's Day, <span id="footerName"></span> ♡</footer>
       </div>
